@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AI Native Handoff",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "project_id",
+    "state",
+    "from_owner",
+    "next_owner",
+    "summary",
+    "expected_result",
+    "evidence",
+    "created_at"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "description": "Stable task identifier."
+    },
+    "project_id": {
+      "type": "string"
+    },
+    "state": {
+      "enum": ["planned", "implementing", "observing", "intervention_required", "resolved"]
+    },
+    "from_owner": {
+      "enum": ["codex", "hermes", "user"]
+    },
+    "next_owner": {
+      "enum": ["codex", "hermes", "user"]
+    },
+    "summary": {
+      "type": "string"
+    },
+    "target": {
+      "type": "string"
+    },
+    "source_or_release": {
+      "type": ["string", "null"]
+    },
+    "expected_result": {
+      "type": "string"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kind", "value"],
+        "properties": {
+          "kind": {
+            "enum": ["url", "release", "log_summary", "command_result", "screenshot", "other"]
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "requires_user_approval": {
+      "type": "boolean",
+      "default": false
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}
+

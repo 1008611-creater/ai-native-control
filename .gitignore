@@ -1,0 +1,8 @@
+# Never commit credentials, local sessions, or generated runtime state.
+.env
+.env.*
+*.pem
+*.key
+runtime/
+observations/private/
+

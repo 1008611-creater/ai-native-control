@@ -1,0 +1,35 @@
+version: 1
+projects:
+  - id: cauai-web
+    display_name: cauai.fun
+    state: setup
+    targets:
+      - https://cauai.fun
+    engineering_owner: codex
+    operations_owner: hermes
+    source_repository: null
+    release_reference: null
+    expected_state: "Public site responds over HTTPS."
+
+  - id: cauai-ai
+    display_name: ai.cauai.fun
+    state: setup
+    targets:
+      - https://ai.cauai.fun
+    engineering_owner: codex
+    operations_owner: hermes
+    source_repository: null
+    release_reference: null
+    expected_state: "Public service is available to intended users."
+
+  - id: cauai-editor
+    display_name: edit.cauai.fun
+    state: setup
+    targets:
+      - https://edit.cauai.fun
+    engineering_owner: codex
+    operations_owner: hermes
+    source_repository: null
+    release_reference: null
+    expected_state: "Public editor opens and its primary workspace is usable."
+
